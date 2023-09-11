@@ -1,0 +1,47 @@
+<h2 class="title text-center">All Products</h2>
+<div class="row">
+  <div *ngFor="let product of productData">
+    <div class="col-sm-4">
+      <div class="product-image-wrapper">
+        <div class="single-products">
+          <div class="productinfo text-center">
+            <img
+              src="https://img.freepik.com/free-psd/summer-sale-70-discount_23-2148476960.jpg"
+              alt=""
+              routerLink="./{{ product.id }}"
+            />
+            <h2>${{ product.ProductFlat.price }}</h2>
+            <p>{{ product.ProductFlat.name }}</p>
+            <a class="btn btn-default add-to-cart" (click)="addToCart(product)"
+              ><i class="fa fa-shopping-cart"></i>Add to cart</a
+            >
+          </div>
+        </div>
+        <div class="choose">
+          <ul class="nav nav-pills nav-justified">
+            <li>
+              <a (click)="addToWishList(product)"
+                ><i class="fa fa-plus-square"></i>Add to wishlist</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+      <a class="page-link" tabindex="-1" (click)="prevPage()">Previous</a>
+    </li>
+    <li class="page-item disabled" >
+      <a
+        >Page {{ page }} Of {{totalPages}}</a
+      >
+    </li>
+    <li class="page-item">
+      <a class="page-link"  (click)="nextPage()" >Next</a>
+    </li>
+  </ul>
+</nav>

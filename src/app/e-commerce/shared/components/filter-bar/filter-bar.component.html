@@ -1,0 +1,84 @@
+<div class="left-sidebar">
+  <h2>Category</h2>
+  <div class="panel-group category-products" id="accordian">
+    <!--category-productsr-->
+    <div class="panel panel-default" *ngFor="let category of categoryData; let i = index">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <li>
+            <a data-toggle="collapse" data-parent="#accordian" [class]="selectedIndex == i ? 'active' : ''" (click)="showProducts(category.id,i)"  href="#{{category.categoryTranslations[0].slug}}">
+              <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+              {{category.categoryTranslations[0].name}}
+            </a>
+          </li>
+        </h4>
+      </div>
+      <div id="{{category.categoryTranslations[0].slug}}" class="panel-collapse collapse">
+        <div class="panel-body">
+          <ul>
+            <li><a>Nike </a></li>
+            <li><a>Under Armour </a></li>
+            <li><a>Adidas </a></li>
+            <li><a>Puma</a></li>
+            <li><a>ASICS </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/category-products-->
+
+  <div class="brands_products">
+    <!--brands_products-->
+    <h2>Brands</h2>
+    <div class="brands-name">
+      <ul class="nav nav-pills nav-stacked">
+        <li>
+          <a> <span class="pull-right">(50)</span>Acne</a>
+        </li>
+        <li>
+          <a> <span class="pull-right">(56)</span>Grüne Erde</a>
+        </li>
+        <li>
+          <a> <span class="pull-right">(27)</span>Albiro</a>
+        </li>
+        <li>
+          <a> <span class="pull-right">(32)</span>Ronhill</a>
+        </li>
+        <li>
+          <a> <span class="pull-right">(5)</span>Oddmolly</a>
+        </li>
+        <li>
+          <a> <span class="pull-right">(9)</span>Boudestijn</a>
+        </li>
+        <li>
+          <a>
+            <span class="pull-right">(4)</span>Rösch creative culture</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!--/brands_products-->
+
+  <!--price-range-->
+  <div class="price-range">
+    <h2>Price Range</h2>
+    <div class="well text-center">
+      <nouislider id="slider-round"
+        class="pmd-range-slider pmd-range-tooltip"
+        [config]="someRange2config"
+        [(ngModel)]="someRange2"
+      >
+      </nouislider>
+
+      <span style="display: flex">
+        <p>$0</p>
+        <p style="margin-left: 77%">$600</p>
+      </span>
+    </div>
+  </div>
+
+  <!--/price-range-->
+  <!--/shipping-->
+</div>
